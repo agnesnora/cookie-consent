@@ -2,13 +2,17 @@ setTimeout(function () {
   modal.style.display = "inline";
 }, 1500);
 
+const declineBtn = document.getElementById("declineBtn");
 const closeBtn = document.getElementById("modal-close-btn");
 const modalText = document.getElementById("modal-text");
+const choice = document.getElementById("modal-choice-btns");
+
 closeBtn.addEventListener("click", function () {
   modal.style.display = "none";
 });
 
 const consentForm = document.getElementById("consent-form");
+
 consentForm.addEventListener("submit", function (e) {
   e.preventDefault();
 
@@ -36,4 +40,7 @@ consentForm.addEventListener("submit", function (e) {
   <img src="images/pirate.gif">
 </div>`;
   }, 3500);
+});
+declineBtn.addEventListener("mouseover", function () {
+  choice.classList.toggle("reverse");
 });
